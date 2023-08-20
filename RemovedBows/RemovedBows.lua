@@ -14,7 +14,7 @@
 
 ]]
 ModUtil.Mod.Register("RemovedBows")
-
+ModUtil.LoadOnce(function()
 WeaponUpgradeData.BowWeapon[1] =
     {
         Costs = { 0, 0, 0, 0, 0 },
@@ -37,7 +37,7 @@ WeaponUpgradeData.BowWeapon[2] =
         BonusEquippedKitAnimation = "WeaponBowAlt03FloatingIdleOffBonus",
         Image = "Codex_Portrait_BowAlt03",
     }
-
+end)
 --enable arrow storage mechanic
 OnWeaponCharging{ "BowWeapon",
 	function( triggerArgs )
