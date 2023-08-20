@@ -136,28 +136,6 @@ function EmptyBowDashChargeX( stageReached )
 	CurrentRun.CurrentRoom.ChargeTicksReached = 0
 end
 
-
---make arrow storage work with dash strike
---[[ this led to a memory leak or something???? idk man
-ModUtil.Path.Context.Wrap("DoBowChargeX",function()
-	ModUtil.Path.Wrap("GetWeaponProperty", function(baseFunc, args)
-		if baseFunc(args) then return true end
-		args.WeaponName = "BowWeaponDash"
-		return baseFunc(args)
-	end)
-end)
-
-ModUtil.Path.Context.Wrap("DoBowChargeX",function()
-	ModUtil.Path.Wrap("SetWeaponProperty",function(baseFunc, args)
-		baseFunc(args)
-		if args.WeaponName == "BowWeapon" then 
-			args.WeaponName = "BowWeaponDash"
-			baseFunc(args)
-		end
-		return
-	end)
-end)
-
 ModUtil.Path.Context.Wrap("DoBowChargeX",function()
 	ModUtil.Path.Wrap("SetProjectileProperty",function(baseFunc, args)
 		baseFunc(args)
