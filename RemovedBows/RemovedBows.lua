@@ -13,7 +13,7 @@
 
 
 ]]
-ModUtil.Mod.Register("BeamBow")
+ModUtil.Mod.Register("RemovedBows")
 
 WeaponUpgradeData.BowWeapon[1] =
     {
@@ -131,8 +131,8 @@ function EmptyBowDashChargeX( stageReached )
 	SetWeaponProperty({ WeaponName = "BowWeaponDash", DestinationId = CurrentRun.Hero.ObjectId, Property = "NumProjectileWaves", Value = 1 })
 	SetProjectileProperty({ WeaponName = "BowWeaponDash", DestinationId = CurrentRun.Hero.ObjectId, Property = "Scale", Value = 1 })
 	SetProjectileProperty({ WeaponName = "BowWeaponDash", DestinationId = CurrentRun.Hero.ObjectId, Property = "ExtentScale", Value = 1 })
-	SetWeaponProperty({ WeaponName = "RushWeaponDash", DestinationId = CurrentRun.Hero.ObjectId, Property = "FireGraphic", Value = "ZagreusDashNoCollide" })
-	SetWeaponProperty({ WeaponName = "RushWeaponDash", DestinationId = CurrentRun.Hero.ObjectId, Property = "PostBlinkAnim", Value = "null" })
+	SetWeaponProperty({ WeaponName = "RushWeapon", DestinationId = CurrentRun.Hero.ObjectId, Property = "FireGraphic", Value = "ZagreusDashNoCollide" })
+	SetWeaponProperty({ WeaponName = "RushWeapon", DestinationId = CurrentRun.Hero.ObjectId, Property = "PostBlinkAnim", Value = "null" })
 	CurrentRun.CurrentRoom.ChargeTicksReached = 0
 end
 
